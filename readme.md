@@ -1,1 +1,1 @@
-Under MIT Licence
+Under MIT License
