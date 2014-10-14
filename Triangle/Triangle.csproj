@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -97,9 +98,11 @@
     <Content Include="Assimp32.dll" />
     <Content Include="Assimp64.dll" />
     <ToolkitTexture Include="flower.png" />
+    <ToolkitFxc Include="Content\shader\basic.fx" />
     <Content Include="particle.fx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjectBase.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.MaxBy.cs" />
     <Compile Include="TriangleGame.cs" />
   </ItemGroup>

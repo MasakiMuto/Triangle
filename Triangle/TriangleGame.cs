@@ -14,12 +14,14 @@ namespace Masa.Triangle
 	{
 		GraphicsDeviceManager graphicDeviceManager;
 		public InputManager Input { get; private set; }
+		public static TriangleGame Game { get; private set; }
+		GameObjectBase obj;
 
 		public static void Main()
 		{
-			using (var game = new TriangleGame())
+			using (Game = new TriangleGame())
 			{
-				game.Run();
+				Game.Run();
 			}
 		}
 
@@ -38,6 +40,13 @@ namespace Masa.Triangle
 			Window.Title = "Triangle";
 			Input = new InputManager();
 			base.Initialize();
+		}
+
+		protected override void LoadContent()
+		{
+			base.LoadContent();
+			Content.RootDirectory = "Content";
+			obj = new GameObjectBase();
 		}
 
 		protected override void Dispose(bool disposeManagedResources)
@@ -59,6 +68,7 @@ namespace Masa.Triangle
 		protected override void Draw(GameTime gameTime)
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
+			obj.Draw();
 			base.Draw(gameTime);
 		}
 	}
